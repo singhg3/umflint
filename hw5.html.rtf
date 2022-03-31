@@ -1,0 +1,331 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNSMono-Regular;}
+{\colortbl;\red255\green255\blue255;\red189\green198\blue208;}
+{\*\expandedcolortbl;;\cssrgb\c78824\c81961\c85098;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+!DOCTYPE html>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <html lang="en">\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <head>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<title>Choropleth Tutorial - Leaflet</title>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<title>Winner:Trump</title>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<meta charset="utf-8" />\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	<style>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		html, body \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			height: 100%;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			margin: 0;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		\}\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		.leaflet-container \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			height: 400px;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			width: 600px;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			max-width: 100%;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			max-height: 100%;\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		\}\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	</style>\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 </head>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <body>\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <div id='map'></div>\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <script type="text/javascript" src= \'94http://www-personal.umich.edu/~bisgin/2016elections.js\'94></script>\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 <script type="text/javascript">\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	var map = L.map('map').setView([37.8, -96], 4);\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/\{id\}/tiles/\{z\}/\{x\}/\{y\}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		maxZoom: 18,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			'Imagery \'a9 <a href="https://www.mapbox.com/">Mapbox</a>',\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		id: 'mapbox/light-v9',\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		tileSize: 512,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		zoomOffset: -1\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\}).addTo(map);\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	// get color depending on population density value\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	function getColor(d) \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		return d > 1000 ? '#800026' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 500  ? '#BD0026' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 200  ? '#E31A1C' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 100  ? '#FC4E2A' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 50   ? '#FD8D3C' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 20   ? '#FEB24C' :\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			d > 10   ? '#FED976' : '#FFEDA0';\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\}\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	if (d > 500)\{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		getColor("#FC4E2A")\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 \}    \
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	else\{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		getColor("#0000FF")\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\}\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	function style(feature) \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		return \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			weight: 2,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			opacity: 1,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			color: 'white',\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			dashArray: '3',\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			fillOpacity: 0.7,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 			fillColor: getColor(feature.properties.density)\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		\};\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\}\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	/* global statesData */\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	var geojson = L.geoJson(statesData, \{\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 		style: style,\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 	\}).addTo(map);\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 </script>\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 </body>\
+\pard\pardeftab720\sl400\qr\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf2 </html>\
+}
